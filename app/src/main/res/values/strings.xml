@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Campanello</string>
+    <string name="dialog_message">Hai sbloccato un nuovo suono!</string>
+    <string name="dialog_title">Complimenti!</string>
 </resources>
