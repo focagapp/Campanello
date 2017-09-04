@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
     Button campanello;
     MediaPlayer mediaPlayer = new MediaPlayer();
     MediaPlayer mediaPlayer2 = new MediaPlayer();
-    Boolean bool = true;
+    Boolean jumpWhenPlaying = true;
     Switch cambio;
     Object suono = R.raw.bell;
     int count;
@@ -56,16 +56,16 @@ public class MainActivity extends Activity {
                 }
 
                 //manage the memory problem for the media player object
-                if (bool) {
+                if (jumpWhenPlaying) {
                     mediaPlayer = MediaPlayer.create(getApplicationContext(), (int)suono);
                     mediaPlayer.start();
-                    bool = false;
+                    jumpWhenPlaying = !jumpWhenPlaying;
                     mediaPlayer2.release();
                     count ++;
                 } else {
                     mediaPlayer2 = MediaPlayer.create(getApplicationContext(), (int)suono);
                     mediaPlayer2.start();
-                    bool = true;
+                    jumpWhenPlaying = !jumpWhenPlaying;
                     mediaPlayer.release();
                     count ++;
                 }
